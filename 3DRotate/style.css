@@ -1,0 +1,66 @@
+
+
+*{
+    margin: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #1c1c1c;
+}
+.menu{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.menu-item{
+    position: relative;
+    text-decoration: none;
+    height: 3rem;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.menu-text-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: var(--color);
+    transition: .75s;
+}
+
+.menu-text-container span{
+    display: inline-block;
+    line-height: 1;
+    font-size: 3rem;
+    text-transform: uppercase;
+    transition: .75s;
+    transition-delay: calc(.75s * var(--index));
+    margin: 0 2px;
+}
+.menu-text-container.origin span{
+    transform: bottom;
+}
+.menu-item:hover .menu-text-container.origin span {
+    transform: translateY(-100%) rotateX(90deg);
+}
+.menu-text-container.clone span {
+    transform-origin: top;
+    transform: translateY(100%) rotateX(90deg);
+}
+.menu-item:hover .menu-text-container.clone span {
+    transform: translateY(0%) rotateX(0deg);
+}
+.menu-item:hover .menu-text-container{
+    filter: drop-shadow(0 0 10px green)
+    drop-shadow(0 0 50px red);
+}
